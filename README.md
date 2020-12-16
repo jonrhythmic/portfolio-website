@@ -7,7 +7,7 @@ Live demo: [https://jonrhythmic.github.io](https://jonrhythmic.github.io/)
 This project is currently WIP and in active development.\
 Note that it's not available by live hosting at [github pages](https://jonrhythmic.github.com).
 
-## Licence
+## License
 
 Copyright (c) 2012-2020 Scott Chacon and others\
 \
