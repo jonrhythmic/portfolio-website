@@ -1,10 +1,10 @@
 # MERN portfolio website 
+### `status: WIP`
 
 Personal fullstack portfolio website built using MERN to showcase my programming history. 
 
 Live demo: [https://jonrhythmic.github.io](https://jonrhythmic.github.io/)
 
-### `status: WIP`
 NOTE: 
 - Not currently set to host live throught github pages!
 
