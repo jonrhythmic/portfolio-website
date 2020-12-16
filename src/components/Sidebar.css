@@ -1,0 +1,68 @@
+@media screen and (min-width: 650px) {
+    /*
+        Wrapper class for each links on the sidebar
+        NOTE: Doesn't handle styling the background color (a's wrapped in a section className="links") 
+    */
+    .links {
+        display: flex;
+        flex-direction: column;
+        /* NOTE: Add a position: static that follows the window top on scroll */
+    }
+
+    .links > a {
+        font-size: 1.6rem;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0.27em 0;
+        padding: 0.21em 0;
+        border-bottom: 1px solid rgba(44, 44, 44, 0.34);
+        width: 100%;
+        background: honeydew;
+        text-align: center;
+    }
+
+    .links > a:hover {
+        animation-duration: 0.255s;
+        animation-name: fadeInGradient;
+        background: linear-gradient(63deg, dimgrey, slateblue);
+    }
+
+    @keyframes fadeInGradient {
+        0% {
+            background: linear-gradient(27deg, white, dimgrey);
+        }
+        100% {
+            background: linear-gradient(45deg, dimgrey, slateblue);
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .links {
+        display: flex;
+        flex-direction: row;
+        min-height: 35px;
+        margin: auto;
+    }
+
+    .links > a {
+        margin: 5px;
+        list-style-type: none;
+        text-decoration: none;
+    }
+
+    .links > a:hover {
+        animation-name: mobile-fadeInGradient;
+        animation-duration: 0.255s;
+        background: linear-gradient(45deg, darkgrey, blue)
+    }
+
+    @keyframes mobile-fadeInGradient {
+        0% {
+            background: linear-gradient(27deg, black, darkgrey);
+        }
+        100% {
+            background: linear-gradient(45deg, darkgrey, blue);
+        }
+    }
+}

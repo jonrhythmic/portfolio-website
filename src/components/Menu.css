@@ -1,0 +1,30 @@
+/*
+    Somehow "sticky" in the top corner when scrolling using absolute code from another file
+*/
+
+section.searchbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin: 20px;
+    width: 70%;
+    height: 45px;
+}
+
+#site-search {
+    /* position: absolute is't correct. Also the whole section is too small */
+    /* position: relative; */
+    padding: 8px;
+    border-radius: 7px;
+    font-size: 1.25rem;
+    color: darkslategrey;
+}
+
+img.magnifying-glass {
+    /* position: absolute is't correct. Also the whole section is too small */
+    /* position: relative; */
+    border-radius: 22px;
+    margin-right: 8px;
+    width: 45px;
+    height: 45px;
+}

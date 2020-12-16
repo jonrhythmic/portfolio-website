@@ -1,0 +1,13 @@
+div.content {
+    background: repeating-radial-gradient(circle at center, #151714, #59595d 80px, #141712 180px);
+}
+
+.box {
+    margin: 40px 15px 15px 15px;
+    padding: 10px;
+    border: 2px dotted salmon;
+    box-sizing: border-box;
+    background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.96), rgb(255, 255, 255));
+}
+
+.box:nth-of-type(2n) { background: conic-gradient(from 128deg at bottom right, rgba(185, 189, 185, 0.863), rgba(15, 15, 15, 0.356));}

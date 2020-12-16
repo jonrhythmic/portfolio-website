@@ -1,0 +1,192 @@
+@media screen and (min-width: 650px) and (orientation: landscape) {
+    /*
+        Wrapper class for the entire header area
+    */
+    section.header {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 1fr;
+        background: linear-gradient(72deg, #32abe0, #bdbbdb);
+
+    }
+
+    img.home-icon {
+        grid-column-start: 1;
+        max-width: 64px;
+        max-height: 64px;
+    }
+    
+    /* 
+        Rotation animation on the home button 
+    */
+    @keyframes home-anim {
+        0% { transform: scale(2); }
+        25% { transform: rotate(5deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(-10deg); }
+        100% { transform: rotate(-5deg); }
+    }
+
+    img.home-icon:hover {
+        animation: home-anim 1.2s;
+    }
+
+
+    section.navigation {
+        grid-column-start: 2;
+        display: flex;
+    }
+
+    section.navigation > a {
+        list-style-type: none;
+        text-decoration: none;
+        margin: 8px;
+        padding: 12px;
+        width: auto; height: auto;
+        color: white;
+        background: black;
+        font-size: 1.8rem;
+    }
+
+    /*
+        Animate header links with a "small upward bounce" when hovering.
+        NOTE: Jitters if user hovers the border of the element!
+    */
+    @keyframes header-link-anim {
+        from { transform: translateY(-5px); }
+        to { transform: translateY(0px); }
+    }
+
+    section.navigation > a:hover {
+        animation-name: header-link-anim;
+        animation-duration: 1s;
+    }
+    
+    /* 
+        Wrapper class for the searchfield 
+    */
+    section.search-bar {
+        grid-column-start: 8;
+        /* Re-edit this to use grid to position the homebutton, links and searchfield along the header */
+        display: flex;
+        /*flex-flow: row wrap;*/ /* Removed to show grid */
+        /* Somehow justify-content and align-items (flex props) doesn't have any effect on the layout */
+        justify-content: flex-start;
+        align-items: stretch;
+        align-content: stretch;
+        align-self: flex-end;
+        margin: auto auto;
+        /* Setting width stretches the content to fit the container! 
+        *//*
+        width: auto; */
+        height: 45px;
+    }
+
+    img.magnifying-glass {
+        /* position: absolute is't correct. Also the whole section is too small */
+        /* position: relative; */
+        flex-grow: 1;
+        border-radius: 22px;
+        margin-right: 8px;
+        margin-left: 8px;
+        width: 45px;
+        height: 45px;
+    }
+
+    img.magnifying-glass:hover {
+        animation: search-anim 1s;
+    }
+
+    @keyframes search-anim {
+        from {}
+        to {}
+    }
+
+    #site-search {
+        /* position: absolute isn't correct. Also the whole section is too small */
+        /* position: relative; */
+        padding: 8px;
+        width: 340px;
+        font-size: 1.25rem;
+        color: darkslategrey;
+    }
+    
+    .label {
+        display: inline-block;
+        color: white;
+        padding: 8px;
+        height: 45px;
+    }
+
+    .success {background-color: green;}
+    .failure {background-color: red;}
+    .info {background-color: blue;}
+    .warning {background-color: orange;}
+    .other {background-color: dimgrey; color: black;}
+        
+    /* wrapper class the the login area*/
+    .--login-menu {
+        grid-column-start: 9;
+        grid-row-start: 1;
+        display: inline-flex;
+        margin: auto; 
+    }
+
+    /* summary class to style the login button when closed (affects the summary tag) */
+    summary {
+        cursor: pointer;
+        color: black;
+        background: teal;
+        transition: 0.2s background linear;
+    }
+
+    /* style the hover effect on the login button */
+    summary:hover {
+        color: darkolivegreen; 
+        background: slategrey; 
+    }
+
+    summary ~ u {
+        width: 100%; height: 100%;
+        text-decoration: none;
+        color: dimgrey;
+        background: darkslateblue;
+    }
+
+    /* details class to style the login button when closed (not affecting summary) */
+    .--login-button {
+        list-style-type: none;
+        color: tomato;
+        background: whitesmoke;
+        font-size: 18px;
+        z-index: 1;
+    }
+
+    /* details class to style each menu item on the drop down menu */
+    details[open] {
+        line-height: 2rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .home-button {
+        max-width: 48px;
+        max-height: 48px;
+    }
+    .header {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        width: 100%;
+    }
+
+    .header > a {
+        list-style-type: none;
+        text-decoration: none;
+        color: linen;
+        margin: 5px;
+        padding: 2px;
+        background: darkslateblue;
+        font-size: 1.25rem;
+    }
+}

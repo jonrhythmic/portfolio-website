@@ -1,0 +1,249 @@
+/* Add a custom font
+    @font-face {
+        font-family: 'THE FILE NAME';
+        font-style: normal;
+        font-weight: normal;
+        src: local('THE FILE NAME'), url('Filename.Format') format('eg. ttf');
+    }
+*/
+/* Try this to add color themes
+:root {
+    --color-background: #ffffff;
+    --color-border: #cacfd5;
+    --color-text-default: #0b1016;
+    --color-base: #f4f5f6;
+    --color-accent: #ba0d37;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #38444c;
+        --color-border: #697278;
+        --color-text-default: #f0f2f3;
+        --color-base: #293238;
+        --color-accent: #ec1a62; 
+    }
+}
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color-scheme: light dark;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 80px 1fr 80px;
+    margin: auto;
+    /*width: 100vw;
+    height: 100vh;*/
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    grid-column-start: 1;
+    grid-column: span 10;
+    background: thistle;
+}
+
+nav {
+    grid-column-start: 8;
+    grid-column: span 2;
+    grid-row-start: 2;
+    margin-top: 2.1em;
+    /* Will position itself after the main which has 
+    position set (grid-column and grid-row-start)
+
+    grid-row-start: 2; */
+    /*background: seagreen;*/
+}
+
+main {
+    display: flex; 
+    flex-flow: row wrap;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    /* Alternative to grid-column-end
+
+    grid-column: span 7; */
+    grid-row-start: 2;
+}
+
+footer {
+    grid-column-start: 1;
+    grid-column: span 10;
+    grid-row-start: 3;
+    background: slategrey;
+    clear: both;
+}
+  
+  
+
+@media screen and (max-width: 650px) {
+    .container {
+        display: block;
+        }
+}
+
+@media (prefers-color-scheme: no-preference) {
+    .container {
+        background: linear-gradient(180deg, grey, dimgrey);
+    }
+    header {
+        background: #dead;
+    }
+    img {
+        filter: brightness(0.8) contrast(1.2);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    html[data-theme='light'] {
+        background: white;
+    }
+
+    body.light-theme {
+        background: whitesmoke;
+        color: darkslategrey;
+    }
+
+    .container {
+        background: radial-gradient(to bottom, thistle, linen);
+    }
+    header {
+        background: #dead;
+    }
+    img {
+        filter: brightness(0.8) contrast(1.2);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html[data-theme='dark'] {
+        background: black;
+    }
+
+    body.dark-theme {
+        background: brown;
+        color: olivedrab;
+    }
+
+    .container {
+        background: linear-gradient(180deg, midnightblue, lightskyblue);
+    }
+    header {
+        background: #bac;
+    }
+    img {
+        filter: brightness(0.8) contrast(1.2);
+    }
+}
+
+/* 
+    Borders with text in them from: 
+    https://css-tricks.com/how-to-add-text-in-borders-using-basic-html-elements/ 
+*/
+aside {
+    display: block;
+    position: relative;
+    grid-column-start: 5;
+    grid-row-start: 2;
+}
+
+.shape {
+    display: grid;
+    margin: auto;
+    margin-top: calc(50vh - 170px);
+    width: 300px; height: 300px;
+}
+
+fieldset {
+    border: 10px solid transparent;
+    border-top-color: black;
+    box-sizing: border-box;
+    grid-area: 1 / 1;
+    padding: 20px;
+    width: inherit;
+}
+
+/* Rotate the individual fieldsets */
+fieldset:nth-of-type(2){ transform: rotate(100deg); }
+fieldset:nth-of-type(3){ transform: rotate(200deg); } 
+fieldset:nth-of-type(4){ transform: rotate(300deg); } 
+fieldset:nth-of-type(5){ transform: rotate(400deg); } 
+fieldset:nth-of-type(6){ transform: rotate(500deg); } 
+fieldset:nth-of-type(7){ transform: rotate(600deg); } 
+fieldset:nth-of-type(8){ transform: rotate(700deg); } 
+fieldset:nth-of-type(9){ transform: rotate(800deg); } 
+
+legend {    
+    font: 15pt/0 'Averia Serif Libre';
+    margin: auto;
+    padding: 0 4px;
+}
+
+legend:nth-of-type(3) > legend { transform: rotate(180deg); }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    margin: auto auto;
+    width: 60px; 
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    width: 26px; 
+    height: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: rgb(49, 42, 42);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

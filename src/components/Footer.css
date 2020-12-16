@@ -1,0 +1,13 @@
+@media screen and (min-width: 650px) {
+    .footer {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .footer {
+        text-align: center;
+        justify-content: center;
+        height: 50px;
+    }
+}
