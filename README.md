@@ -5,7 +5,7 @@ Live demo: [https://jonrhythmic.github.io](https://jonrhythmic.github.io/)
 ### `progression status`
 
 This project is currently WIP and in active development.\
-Note that it's not available by live hosting at [github pages](https://jonrhythmic.githob.com).
+Note that it's not available by live hosting at [github pages](https://jonrhythmic.github.com).
 
 ## Licence
 
